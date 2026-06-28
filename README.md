@@ -1,59 +1,57 @@
 # Multi-Task-Learning-Framework-for-Brain-Tumor-Segmentation-and-Classification
-## Overview
-This project proposes a sequential multi-task learning framework for brain tumor analysis.
 
-The segmentation model first generates tumor masks using Attention Residual U-Net. The predicted masks are then combined with the original MRI images and used as input to an InceptionV3 classifier.
+## Overview
+This repository contains the implementation of a two-stage multi-task deep learning framework for automated brain tumor analysis from MRI scans. The pipeline performs:
+
+1. **Semantic Segmentation** — Attention Residual U-Net to localize tumor regions (Dice: 0.80)
+2. **Multi-class Classification** — InceptionV3 trained on predicted mask concatenated with MRI images (Accuracy: 93.23%)
+
+The segmentation output is directly fed into the classification stage, creating a tumor-focused representation that improves both interpretability and accuracy.
 
 ## Pipeline
 
-MRI Image
-
-↓
-
-Attention Residual U-Net
-
-↓
-
-Predicted Tumor Mask
-
-↓
-
-Mask + MRI Fusion
-
-↓
-
-InceptionV3
-
-↓
-
-Tumor Classification
-
 <img width="1216" height="523" alt="MTL" src="https://github.com/user-attachments/assets/d1570de0-affd-4dc9-b056-e65ef2b78dd8" />
-
-
-## Models
-
-Segmentation:
-• Attention Residual U-Net
-
-Classification:
-• InceptionV3
 
 ## Dataset
 
-Figshare Brain Tumor MRI Dataset
+We use the publicly available [Figshare Brain Tumor Dataset](https://doi.org/10.6084/m9.figshare.1512427)
 
+| Tumor Type   | Label | Slices | Percentage |
+|--------------|-------|--------|------------|
+| Meningioma   | 1     | 708    | 23.1%      |
+| Glioma       | 2     | 1,426  | 46.6%      |
+| Pituitary    | 3     | 930    | 30.4%      |
+
+---
 ## Results
 
-Classification Accuracy:
-93.23%
+### Segmentation
 
-<img width="668" height="534" alt="cm" src="https://github.com/user-attachments/assets/04c74069-602f-493e-b73f-0d7ea90f6cb1" />
-
-
-<img width="4500" height="2441" alt="predictions_vs_groundtruth (2)" src="https://github.com/user-attachments/assets/50d1e255-df95-44c3-95b9-9a4f1ea5e7dc" />
+<img width="1163" height="385" alt="image" src="https://github.com/user-attachments/assets/492d39d2-2d96-4142-a23e-a589ed35c279" />
 
 
-## Publication
+| Model                    | Dice Score | Test Accuracy |
+|--------------------------|------------|---------------|
+| U-Net                    | 0.72       | 0.9914        |
+| VGG16 U-Net              | 0.70       | 0.9932        |
+| ResNet50 U-Net           | 0.65       | 0.9931        |
+| Attention U-Net          | 0.76       | 0.9926        |
+| **Attention Residual U-Net** | **0.80** | **0.9933**  |
+| Swin Transformer         | 0.75       | 0.9918        |
 
-Link to IEEE publication: [https://ieeexplore.ieee.org/abstract/document/11318534](https://ieeexplore.ieee.org/abstract/document/11318534)
+### Classification
+
+<img width="668" height="534" alt="cm" src="https://github.com/user-attachments/assets/9b241238-8c62-426e-ad4d-3a12fc4efa38" />
+
+
+| Model | Accuracy | Precision | Recall | F1-Score |
+|-------|----------|-----------|--------|----------|
+| ConvNextTiny | 0.9103 | 0.88 | 0.27 | 0.89 |
+| InceptionV3 (baseline) | 0.8760 | 0.83 | 0.39 | 0.84 |
+| EfficientNetV2S | 0.9103 | 0.86 | 0.31 | 0.86 |
+| VGG19 | 0.9315 | 0.90 | 0.23 | 0.87 |
+| VGG16 | 0.93 | 0.90 | 0.23 | 0.87 |
+| **Proposed (InceptionV3 + Masks)** | **0.9323** | **0.92** | **0.91** | **0.92** |
+
+<img width="4500" height="1271" alt="image" src="https://github.com/user-attachments/assets/6c3a81a6-c9e0-40e8-9a2f-80492878fdec" />
+
