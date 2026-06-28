@@ -49,11 +49,6 @@ We use the publicly available [Figshare Brain Tumor Dataset](https://doi.org/10.
 
 
 
-<img width="668" height="534" alt="cm" src="https://github.com/user-attachments/assets/9b241238-8c62-426e-ad4d-3a12fc4efa38" />
-
-
-
-
 | Model | Accuracy | Precision | Recall | F1-Score |
 |-------|----------|-----------|--------|----------|
 | ConvNextTiny | 0.9103 | 0.88 | 0.27 | 0.89 |
@@ -63,7 +58,7 @@ We use the publicly available [Figshare Brain Tumor Dataset](https://doi.org/10.
 | VGG16 | 0.93 | 0.90 | 0.23 | 0.87 |
 | **Proposed (InceptionV3 + Masks)** | **0.9323** | **0.92** | **0.91** | **0.92** |
 
-
+### Final Predictions
 
 <img width="4500" height="1271" alt="image" src="https://github.com/user-attachments/assets/6c3a81a6-c9e0-40e8-9a2f-80492878fdec" />
 
