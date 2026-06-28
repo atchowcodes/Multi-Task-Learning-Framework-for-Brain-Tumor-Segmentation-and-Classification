@@ -25,9 +25,13 @@ We use the publicly available [Figshare Brain Tumor Dataset](https://doi.org/10.
 ---
 ## Results
 
+
+
 ### Segmentation
 
 <img width="1163" height="385" alt="image" src="https://github.com/user-attachments/assets/492d39d2-2d96-4142-a23e-a589ed35c279" />
+
+
 
 
 | Model                    | Dice Score | Test Accuracy |
@@ -39,9 +43,15 @@ We use the publicly available [Figshare Brain Tumor Dataset](https://doi.org/10.
 | **Attention Residual U-Net** | **0.80** | **0.9933**  |
 | Swin Transformer         | 0.75       | 0.9918        |
 
+
+
 ### Classification
 
+
+
 <img width="668" height="534" alt="cm" src="https://github.com/user-attachments/assets/9b241238-8c62-426e-ad4d-3a12fc4efa38" />
+
+
 
 
 | Model | Accuracy | Precision | Recall | F1-Score |
@@ -52,6 +62,8 @@ We use the publicly available [Figshare Brain Tumor Dataset](https://doi.org/10.
 | VGG19 | 0.9315 | 0.90 | 0.23 | 0.87 |
 | VGG16 | 0.93 | 0.90 | 0.23 | 0.87 |
 | **Proposed (InceptionV3 + Masks)** | **0.9323** | **0.92** | **0.91** | **0.92** |
+
+
 
 <img width="4500" height="1271" alt="image" src="https://github.com/user-attachments/assets/6c3a81a6-c9e0-40e8-9a2f-80492878fdec" />
 
