@@ -1,5 +1,7 @@
 # Multi-Task-Learning-Framework-for-Brain-Tumor-Segmentation-and-Classification
 
+> Published at IEEE SLAAI-ICAI 2025
+[![Paper](https://img.shields.io/badge/Paper-IEEE%20Xplore-blue.svg)](https://ieeexplore.ieee.org/abstract/document/11318534)
 ## Overview
 This repository contains the implementation of a two-stage multi-task deep learning framework for automated brain tumor analysis from MRI scans. The pipeline performs:
 
